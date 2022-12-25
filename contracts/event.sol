@@ -47,12 +47,12 @@ contract EventContract {
     }
 
     function getEvent(address eventAddr) public view 
-    returns (address EventAddr, string memory EventName, string memory EventLoc, uint EventStock, uint EventPrice) {
-        EventAddr = eventAddr;
-        EventName = eventData[eventAddr].name;
-        EventLoc = eventData[eventAddr].location;
-        EventStock = eventData[eventAddr].stock;
-        EventPrice = eventData[eventAddr].price;
+    returns (address eventAddress, string memory eventName, string memory eventLoc, uint eventStock, uint eventPrice) {
+        eventAddress = eventAddr;
+        eventName = eventData[eventAddr].name;
+        eventLoc = eventData[eventAddr].location;
+        eventStock = eventData[eventAddr].stock;
+        eventPrice = eventData[eventAddr].price;
     }
 
     function deleteEvent(address eventAddr) public onlyOwner {
@@ -79,5 +79,27 @@ contract EventContract {
         addrList.pop();
     }
 
-    // TODO: add BuyEvent
+    function buyEvent(address eventAddr, uint amount) public payable
+    returns (address eventAddress, string memory eventName, string memory eventLoc, uint eventStock, uint eventPrice, string memory status) {
+        require(amount > 0, "Invalid event amount.");
+
+        require(msg.sender != ownerAddress, "Owner can not buy any Event.");
+
+        eventStock = eventData[eventAddr].stock;
+
+        require(eventStock > 0, "Event is not available.");
+
+        require(amount < eventStock, "Amount exceed event's availability.");
+
+        eventAddress = eventAddr;
+        eventName = eventData[eventAddr].name;
+        eventLoc = eventData[eventAddr].location;
+        eventData[eventAddr].stock = eventData[eventAddr].stock - 1;
+        eventStock = eventData[eventAddr].stock;
+
+        require(msg.value >= eventPrice * amount, "You don't have the sufficient money.");
+        payable(address(this)).transfer(msg.value);
+        
+        status = "Success";
+    }
 }
