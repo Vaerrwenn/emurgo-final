@@ -1,0 +1,221 @@
+{
+	"compiler": {
+		"version": "0.8.6+commit.11564f7e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "eventAddr",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "eventName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "eventLocation",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "eventStock",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "eventPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "addEvent",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "addrList",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "eventAddr",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "buyEvent",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "eventAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "eventName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "eventLoc",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "eventStock",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "eventPrice",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "status",
+						"type": "string"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "eventAddr",
+						"type": "address"
+					}
+				],
+				"name": "deleteEvent",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "eventAddr",
+						"type": "address"
+					}
+				],
+				"name": "getEvent",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "eventAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "eventName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "eventLoc",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "eventStock",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "eventPrice",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "ownerAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts\\event.sol": "EventContract"
+		},
+		"evmVersion": "berlin",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts\\event.sol": {
+			"keccak256": "0x9a35c34a23542dc63617f01bd3c6013a75d1c318b4b572231d1fb79dc4e959e3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://611a9302b4379cdb5278851b8a9aaae42d7d1eb851b1e9355ca21fecb23eb284",
+				"dweb:/ipfs/QmbHC2bYQkpk6UwmwopXXNcnStsCC4bXiJ16SGUL4Zzakp"
+			]
+		}
+	},
+	"version": 1
+}
