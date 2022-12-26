@@ -55,6 +55,33 @@ contract EventContract {
         eventPrice = eventData[eventAddr].price;
     }
 
+    function updateEvent(
+        address eventAddr, 
+        string memory name,
+        string memory location,
+        uint stock,
+        uint price) public view onlyOwner
+    returns (address eventAddress, string memory eventName, string memory eventLoc, uint eventStock, uint eventPrice, string memory status) {
+        require(stock > 0, "Event stock must be more than 0");
+
+        require(price > 0, "Event price must be more than 0");
+
+        eventStruct memory eventD;
+
+        eventD = eventData[eventAddr];
+        eventD.name = name;
+        eventD.location = location;
+        eventD.stock = stock;
+        eventD.price = price;
+
+        eventAddress = eventAddr;
+        eventName = eventD.name;
+        eventLoc = eventD.location;
+        eventStock = eventD.stock;
+        eventPrice = eventD.price;
+        status = "Updated.";
+    }
+
     function deleteEvent(address eventAddr) public onlyOwner {
 
         delete eventData[eventAddr];

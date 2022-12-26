@@ -1,0 +1,285 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "eventAddr",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "eventName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "eventLocation",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "eventStock",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "eventPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "addEvent",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "addrList",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "eventAddr",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "buyEvent",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "eventAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "eventName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "eventLoc",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "eventStock",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "eventPrice",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "status",
+						"type": "string"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "eventAddr",
+						"type": "address"
+					}
+				],
+				"name": "deleteEvent",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "eventAddr",
+						"type": "address"
+					}
+				],
+				"name": "getEvent",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "eventAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "eventName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "eventLoc",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "eventStock",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "eventPrice",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "ownerAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "eventAddr",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "location",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "stock",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					}
+				],
+				"name": "updateEvent",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "eventAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "eventName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "eventLoc",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "eventStock",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "eventPrice",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "status",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/event.sol": "EventContract"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/event.sol": {
+			"keccak256": "0x17146ad2dbfe5eb6a5142cb4a067cd4e5b79c5dcd1ab4e3de0ddd6e8b7742b2d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fca1e4ed367a2b21d4bdcaeea5dc8b3761e7c6c9f9dbf6741790da7eeb97d683",
+				"dweb:/ipfs/QmQvj3c9sJR7SZfYnhVqRbsECsoMQVyMSbDVabuh4ZthV9"
+			]
+		}
+	},
+	"version": 1
+}
