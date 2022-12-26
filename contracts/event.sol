@@ -16,8 +16,9 @@ contract EventContract {
         string location;
         uint stock;
         uint price;
-    } 
+    }
 
+    // Address mapped to eventStruct for unique identifier.
     mapping(address => eventStruct) eventData;
 
     address[] public addrList;
@@ -46,27 +47,19 @@ contract EventContract {
         addrList.push(eventAddr);
     }
 
-    function getEvent(address eventAddr) public view 
-    returns (address eventAddress, string memory eventName, string memory eventLoc, uint eventStock, uint eventPrice) {
-        eventAddress = eventAddr;
-        eventName = eventData[eventAddr].name;
-        eventLoc = eventData[eventAddr].location;
-        eventStock = eventData[eventAddr].stock;
-        eventPrice = eventData[eventAddr].price;
-    }
-
     function updateEvent(
         address eventAddr, 
         string memory name,
         string memory location,
         uint stock,
-        uint price) public view onlyOwner
+        uint price) public onlyOwner
     returns (address eventAddress, string memory eventName, string memory eventLoc, uint eventStock, uint eventPrice, string memory status) {
         require(stock > 0, "Event stock must be more than 0");
 
         require(price > 0, "Event price must be more than 0");
 
-        eventStruct memory eventD;
+        // Needs to be "storage" for it to be able to be updated.
+        eventStruct storage eventD;
 
         eventD = eventData[eventAddr];
         eventD.name = name;
@@ -106,6 +99,17 @@ contract EventContract {
         addrList.pop();
     }
 
+    // getEvent gets an event detail by using event's address.
+    function getEvent(address eventAddr) public view 
+    returns (address eventAddress, string memory eventName, string memory eventLoc, uint eventStock, uint eventPrice) {
+        eventAddress = eventAddr;
+        eventName = eventData[eventAddr].name;
+        eventLoc = eventData[eventAddr].location;
+        eventStock = eventData[eventAddr].stock;
+        eventPrice = eventData[eventAddr].price;
+    }
+
+    // buyEvent allows user to buy an event ticket. It'll deduct the event's ticket stock by amount and have payable feature.
     function buyEvent(address eventAddr, uint amount) public payable
     returns (address eventAddress, string memory eventName, string memory eventLoc, uint eventStock, uint eventPrice, string memory status) {
         require(amount > 0, "Invalid event amount.");
@@ -121,7 +125,7 @@ contract EventContract {
         eventAddress = eventAddr;
         eventName = eventData[eventAddr].name;
         eventLoc = eventData[eventAddr].location;
-        eventData[eventAddr].stock = eventData[eventAddr].stock - 1;
+        eventData[eventAddr].stock = eventData[eventAddr].stock - amount;
         eventStock = eventData[eventAddr].stock;
 
         require(msg.value >= eventPrice * amount, "You don't have the sufficient money.");

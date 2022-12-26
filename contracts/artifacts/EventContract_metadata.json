@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.7+commit.e28d00a7"
+		"version": "0.8.6+commit.11564f7e"
 	},
 	"language": "Solidity",
 	"output": {
@@ -237,7 +237,7 @@
 						"type": "string"
 					}
 				],
-				"stateMutability": "view",
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -260,7 +260,7 @@
 		"compilationTarget": {
 			"contracts/event.sol": "EventContract"
 		},
-		"evmVersion": "london",
+		"evmVersion": "berlin",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -273,11 +273,11 @@
 	},
 	"sources": {
 		"contracts/event.sol": {
-			"keccak256": "0x17146ad2dbfe5eb6a5142cb4a067cd4e5b79c5dcd1ab4e3de0ddd6e8b7742b2d",
+			"keccak256": "0xb2d5725d302ab9b43a6ffe9bc21d1502f228cfafbaa2a3bbe1e18ae9163806ea",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://fca1e4ed367a2b21d4bdcaeea5dc8b3761e7c6c9f9dbf6741790da7eeb97d683",
-				"dweb:/ipfs/QmQvj3c9sJR7SZfYnhVqRbsECsoMQVyMSbDVabuh4ZthV9"
+				"bzz-raw://9a579a200d37a1af9626e07a7ebd352b7785d0f45ca4e16b38337c3ac6bc88b0",
+				"dweb:/ipfs/QmWY4XWr5tb9ERkZk85MKdm9Nmrn5EtwGUWQRA46uCveHv"
 			]
 		}
 	},
